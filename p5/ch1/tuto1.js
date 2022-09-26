@@ -8,11 +8,9 @@ function draw(){
     
     describe('white rect with black outline in mid-right of canvas');
     
-    circle(175,50,25)
+    circle(175,50,75)
 
     triangle(50,50,75,105,105,105)
-
-    line(5,7,78,80)
 
     fill(57,57,75)
     rectMode(CORNER)
@@ -21,16 +19,17 @@ function draw(){
     fill(50,78,125)
     circle(200,200,100)
     
-    fill(255)
+    fill(150,200,0)
     circle(180,180,20)
 
-    fill(255)
+    fill(150,86)
     circle(240,180,20)
 
     fill(255)
     triangle(195,200,205,200,200,195)
 
-    
+    triangle(155,300,255,300,200,245)
 
+    rect(155,300,100,200)
 
 }

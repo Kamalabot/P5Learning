@@ -7,16 +7,63 @@
     <script src="../../libraries/p5.js"></script>
 </head>
 
-
 <body class="Roboto pa1 bg-near-white">
+    <a href="../textIndex.html" class="f4 no-underline blue bg-animate hover-bg-green hover-white inline-flex items-center pa3 ba border-box mr4">
+        <span class="pl1">Text Home</span>
+      </a>
+    <a href="../../index.html" class="f4 no-underline black bg-animate hover-bg-orange hover-white inline-flex items-right pa3 ba border-box mr4">
+      <span class="pr1">Home</span>
+    </a>
     <section class="cf w-100 pv2 flex flex-wrap">
         <div class="fl w-100 f4 tl">
-            <h1>Text Inputs Methods</h1>
+            <h1>Text Inputs Methods of P5</h1>
             <p class="f4 lh-copy">
                 There are multiple methods to get the text inputs from the user inside a webpage. Input or text area elements is 
                 most used. Using the p5.js library opens up new options for working with text inputs, which will also be explored. 
             </p>
-            <p>P5 Input Method</p>
+            <p class="f4 lh-copy">
+                Following are some input fields where the text is entered, and by click of the button the texts populate the HTML Page.
+                This is all done by P5.js library, through the script that is running on this page. 
+            </p>
+            <p>Output Element selected</p>
+        </div>
+        <div class="fl w-100 f4 tl">
+            <textarea name="typeHere" id="food" cols="30" rows="5">Enter your Food Ideas</textarea>
+            <p id="textOut"></p>
+        </div>
+        <button id="submit">Submit</button>
+    </section>
+    <section class="cf w-100 pv2 flex flex-wrap">
+        <div class="fl w-100 f4 tl">
+            <h1>Simplest Convertor</h1>
+            <p class="f4 lh-copy">
+                Learning happens when you try something completely different from what is thought to you.
+                Lets see if we can build a simple length convertor from meter to feet.
+            </p>
+            <label for="loc">Enter Length</label>
+            <input type="text" id="loc"/>
+            <p id="output"></p>
+        </div>
+    </section>
+    <section class="cf w-100 pv2 flex flex-wrap">
+        <div class="fl w-100 f4 tl">
+            <h1>File Input</h1>
+            <p class="f4 lh-copy">
+                Text files are the defacto mode source for many analysis activities. P5.js allows for loading 
+                the files that are already available in two ways.
+                <ul>
+                    <li>Automatically when Page loads</li>
+                    <li>When User takes an action</li>
+                </ul>
+            </p>
+            <h3 class="lh-copy">Following paragraphs were created from the preloaded file data</h3>
+            <p class="f4 lh-copy" id="preTxt"></p>
+            <h3 class="lh-copy">Click the below button to see the next part of the file populate the dom below.</h3>
+            <button id="fileSubmit">Load Another TXT</button>
+            <p class="f4 lh-copy" id="fileSubOut"></p>
+            <h3 class="lh-copy">Another method is to allow the user to select the file and the process it.</h3>
+            <p class="f4 lh-copy">That brings us to the end of the various file input methods, that we will be using extensively.</p>
+            <p class="f4 lh-copy" id="chosenOut"></p>
         </div>
     </section>
     <script src="main.js"></script>
