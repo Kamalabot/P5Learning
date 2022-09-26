@@ -1,0 +1,34 @@
+{
+  "name": "p5_textprgming",
+  "version": "1.0.0",
+  "description": "Platform to Practice P5 and Text Programming",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Kamalabot/P5Learning.git"
+  },
+  "keywords": [
+    "text",
+    "visualisation",
+    "programming",
+    "p5js",
+    "ml5"
+  ],
+  "author": "solverBot",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Kamalabot/P5Learning/issues"
+  },
+  "homepage": "https://github.com/Kamalabot/P5Learning#readme",
+  "dependencies": {
+    "express": "^4.18.1",
+    "live-server": "^1.2.2",
+    "ml5": "^0.12.2",
+    "nedb": "^1.8.0",
+    "nodemon": "^2.0.20",
+    "p5": "^1.4.2"
+  }
+}
