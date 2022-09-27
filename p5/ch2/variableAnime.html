@@ -5,6 +5,9 @@
     <title>Animating P5</title>
     <link rel="stylesheet" href="../../libraries/tachyons/tachyons.min.css">
     <script src="../../libraries/p5.js"></script>
+    <style>
+      iframe{overflow:hidden}
+    </style>
 </head>
 
 <body class="helvetica pa1 bg-lightest-green">
@@ -37,7 +40,23 @@
           setup function or draw function. 
           Things have slowed down because the frameRate has been reduced to 25. Why the circle is moving continuosly 
           away from the place it start? 
-          <strong>Take your mouse on the canvan and give a click</strong>
+          <strong>Take your mouse on the canvas and give a click</strong>
+        </p>
+        <strong>Map & Random Function</strong>
+        <ul>
+          <li>windowWidth</li>
+          <li>windowHeight</li>
+          <li>width</li>
+          <li>height</li>
+        </ul>
+        <p class="f4 lh-copy">There is more to P5 than it meets the eyes. <strong>Map</strong> function that converts a 
+          particular range of values to a different range and assigns it to a variable. <strong>Random</strong> function 
+          returns a number between two values. These two functions are used in below visual...
+        </p>
+        <iframe src="https://editor.p5js.org/Kamalabot/full/apxbJsXw4" width="400px" height="500px"></iframe>
+        <p>The radius of circle is fluctuating due to the random() function, and try changing the location of the mouse 
+          and observe the color of the background change. That change is created by the map function. 
+          It opens up to interesting outcomes....
         </p>
     </section>
     <script src="tuto2.js"></script>
