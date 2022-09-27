@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Manipulating Texts</title>
+    <link rel="stylesheet" href="../../libraries/tachyons/tachyons.min.css">
+    <script src="../../libraries/p5.js"></script>
+</head>
+
+<body class="Roboto pa1 bg-near-white">
+    <a href="../textIndex.html" class="f4 no-underline blue bg-animate hover-bg-green hover-white inline-flex items-center pa3 ba border-box mr4">
+        <span class="pl1">Text Home</span>
+      </a>
+    <a href="../../index.html" class="f4 no-underline black bg-animate hover-bg-orange hover-white inline-flex items-right pa3 ba border-box mr4">
+      <span class="pr1">Home</span>
+    </a>
+    <section class="cf w-100 pv2 flex flex-wrap">
+        <div class="fl w-100 f4 tl">
+            <h1>String Methods</h1>
+            <p class="f4 lh-copy">We can do a lot with character, words and sentences. Once they are made into variables 
+                inside programs. These variables are called Objects or Class of Objects. The text based data is called Strings.
+                Strings in javascript have lot of features (called methods) which you <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">refer here.</a>
+            </p>
+            <p>Provide a text file below. (one that has .txt extension)</p>
+            <div id="textCont"></div>
+            <div class="fl w-50 f4 tl">
+                <p class="lh-copy w-50">Number of Words: <span id="length"></span></p>
+                <p class="lh-copy w-50">Number of letters: <span id="charLen"></span></p>
+                <p class="lh-copy bg-red black" id="error"></p>
+            </div>
+            <p class="lh-copy">P5 uses the OOP to attach the elements to the correct 
+                location in the DOM. Say you want to know if a word is inside the file 
+            you have uploaded, and display the sentence it contains</p>
+            <div class="fl w-50 f4 tl">
+                <textarea name="searchArea" id="search" cols="20" rows="2">Enter Search word</textarea>
+                <p class="lh-copy bg-yellow red" id="senOut"></p>
+            </div>
+            <p>JavaScript and P5.js library together makes the process of getting the text file, 
+                manipulating the strings and providing outputs simpler. P5 like JQuery 
+                gives enough control over the DOM elements and allows a range of features to work with. 
+            </p>
+        </div>
+    </section>
+    <script src="main.js"></script>
+</body>
+</html>
