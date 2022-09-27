@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Animating P5</title>
+    <link rel="stylesheet" href="../../libraries/tachyons/tachyons.min.css">
+    <script src="../../libraries/p5.js"></script>
+</head>
+
+<body class="helvetica pa1 bg-lightest-green">
+    <a href="../p5Index.html" class="f4 no-underline blue bg-animate hover-bg-green hover-white inline-flex items-center pa3 ba border-box mr4">
+        <span class="pl1">Visual Home</span>
+    </a>
+    <a href="../../index.html" class="f4 no-underline black bg-animate hover-bg-orange hover-white inline-flex items-right pa3 ba border-box mr4">
+      <span class="pr1">Home</span>
+    </a>
+    <section class="cf w-100 pv2 flex flex-wrap">
+      <div class="fl w-100 f4 tl">
+          <h1>Animation and Mouse</h1>
+          <p class="f4 lh-copy">Computers are meant for expressing the concepts that are moving and creating 
+            patterns, finding optimum solution and repetitive tasks. It is not meant for static image like 
+            the one created in the earlier entry, shown below
+          </p>
+          <div class="fl w-100 f4 tl" id="container"></div>
+          <p class="f4 lh-copy">
+            Lets animate the things on the canvas. To animate the draw function plays a vital role. Because it is 
+            function that is <strong>Forever in loop.</strong> Anything that is put in there is 
+            created again and again. 
+          </p>
+      </div>
+    </section>
+    <section class="cf w-100 pv2 flex flex-wrap">
+      <div class="fl w-100 f4 tl">
+        <h1>Variables in P5</h1>
+        <p class="f4 lh-copy">Starting by <strong>Declaring</strong>, <strong>Initialize</strong> and then <strong>Use.</strong>
+          Declaring is done at the top of the P5 code. Then initialising can happen either at 
+          setup function or draw function. 
+          Things have slowed down because the frameRate has been reduced to 25. Why the circle is moving continuosly 
+          away from the place it start? 
+          <strong>Take your mouse on the canvan and give a click</strong>
+        </p>
+    </section>
+    <script src="tuto2.js"></script>
+</body>
+</html>
