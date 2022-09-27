@@ -1,12 +1,11 @@
-
 var mobilenet;
-var arcticFox;
+var camdeo;
 var loadRes;
 var label;
 
 function getClassifier(){
     console.log('Model Ready...')
-    mobilenet.predict(arcticFox,getResults);
+    mobilenet.predict(getResults);
 }
 
 function getResults(error, prediction){
@@ -22,22 +21,22 @@ function getResults(error, prediction){
 
         //Writing on image itself
         label = `It is a picture of ${prediction[0].label.split(',')[0]}`;    }
-
+        mobilenet.predict(getResults);
     }   
 
-function getImage(){
-    image(arcticFox,0,0,width,height)
+function draw(){ //draw function imposes video on the canvas
+    image(camdeo,0,0,width,height)
     //loadImg.html(arcticFox)
 }
 
 function setup(){
-    createCanvas(400, 400);
+    createCanvas(500, 400);
     background(0);
     
-    arcticFox = createImg('arcticFox.jpg',getImage)
-    arcticFox.hide()
-
-    mobilenet = ml5.imageClassifier('MobileNet',getClassifier) 
- 
+    camdeo = createCapture(VIDEO)
+    camdeo.hide()
+    
+    mobilenet = ml5.imageClassifier('MobileNet',camdeo, getClassifier) 
+ //video is hooked to image classifier function itself....
     loadRes= select("#resOut")
 }

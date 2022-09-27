@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>MobileNet</title>
+    <title>Live Classification</title>
     <link rel="stylesheet" href="../../libraries/tachyons/tachyons.min.css">
     <script src="../../libraries/ml5.js"></script>
     <script src="../../libraries/p5.js"></script>
@@ -17,16 +17,18 @@
     </a>
     <section class="cf w-100 pv2 flex flex-wrap">
         <div class="fl w-100 f4 tl">
-            <h1>Classifying Pics with ML5</h1>
+            <h1>Webcam and ML5 </h1>
             <p class="f4 lh-copy">
-                We want the browser to findout what the image file contains. If you think a human, like the programmer can find out by opening the image file 
-                then you should leave. But...If you want the computer to do it for not one, or two but for a million images without complaining, then we will 
-                see how it is done.  
+                Camera is available everywhere today. On top of it, classifying algorithms are looking it 
+                millions of images and becoming smarter and accurate. Can we make the browser smarter? 
+                We will get to it.  
             </p>
-            <p class="f4 lh-copy">We have the image loaded into the DOM and classified by ML5 with the results shown below. But where?? 
-                It will populate in a moment, as the model is working in the background and getting the results.
+            <p class="f4 lh-copy">
+                Wondering why you are not classified by your name. Because the MobileNet model is not trained with 
+                your image. But other images that you can find under the <a href="https://tfhub.dev/google/imagenet/mobilenet_v2_050_160/feature_vector/5">TF Hub</a>
+                from where the ml5 team is pulling the model. The way to get you classified by your name, a lot of pictures of 
+                yourself is required for training the model. That is going to handled in a seperate page soon. 
             </p>
-            <img id="image">
             <p class="f4 lh-copy bg-red white" id="resOut"></p>
         </div>
     </section>
