@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>MobileNet</title>
+    <link rel="stylesheet" href="../../libraries/tachyons/tachyons.min.css">
+    <script src="../../libraries/ml5.js"></script>
+    <script src="../../libraries/p5.js"></script>
+</head>
+
+<body class="Roboto pa1 bg-near-white">
+    <a href="../mlIndex.html" class="f4 no-underline blue bg-animate hover-bg-green hover-white inline-flex items-center pa3 ba border-box mr4">
+        <span class="pl1">ML Home</span>
+      </a>
+    <a href="../../index.html" class="f4 no-underline black bg-animate hover-bg-orange hover-white inline-flex items-right pa3 ba border-box mr4">
+      <span class="pr1">Home</span>
+    </a>
+    <section class="cf w-100 pv2 flex flex-wrap">
+        <div class="fl w-100 f4 tl">
+            <h1>Identify ME with ML5</h1>
+            <p class="f4 lh-copy">
+                We want the browser to findout what the image file contains. If you think a human, like the programmer can find out by opening the image file 
+                then you should leave. But...If you want the computer to do it for not one, or two but for a million images without complaining, then we will 
+                see how it is done.  
+            </p>
+            <p class="f4 lh-copy">We have the image loaded into the DOM and classified by ML5 with the results shown below. But where?? 
+                It will populate in a moment, as the model is working in the background and getting the results.
+            </p>
+            <p class="f4 lh-copy bg-red white" id="resOut"></p>
+        </div>
+    </section>
+    <script src="main.js"></script>
+</body>
+</html>

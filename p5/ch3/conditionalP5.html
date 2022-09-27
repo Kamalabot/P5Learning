@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Conditional Play</title>
+    <link rel="stylesheet" href="../../libraries/tachyons/tachyons.min.css">
+    <script src="../../libraries/p5.js"></script>
+    <style>
+      iframe{overflow:hidden}
+    </style>
+</head>
+
+<body class="helvetica pa1 bg-lightest-green">
+    <a href="../p5Index.html" class="f4 no-underline blue bg-animate hover-bg-green hover-white inline-flex items-center pa3 ba border-box mr4">
+        <span class="pl1">Visual Home</span>
+    </a>
+    <a href="../../index.html" class="f4 no-underline black bg-animate hover-bg-orange hover-white inline-flex items-right pa3 ba border-box mr4">
+      <span class="pr1">Home</span>
+    </a>
+    <section class="cf w-100 pv2 flex flex-wrap">
+      <div class="fl w-100 f4 tl">
+          <h1>Conditional P5</h1>
+          <p class="f4 lh-copy">While animating there is a challenge of the character, shape leaving the screen 
+            and never returning back, because of their coordinates. We have this problem in the animation shown 
+            below.
+          </p>
+          <iframe src="https://editor.p5js.org/Kamalabot/full/gN4kaeaqv" height="450px" width="400px"></iframe>
+          <p class="f4 lh-copy">
+            How to make it turn back? Enter the conditional expression in P5. These expression are 
+            used in the same way as Javascript. The above visual will have a ball bouncing of the walls  
+            kind of the action shown below. This was done with two if statements, which can be done with single 
+            conditional by using || like below
+            <pre><code>if(xCoord > width || xCoord < 0){
+        speed = speed * -1
+      }</code></pre>
+          </p>
+          <iframe src="https://editor.p5js.org/Kamalabot/full/UXSpoiQdz" height="450px" width="400px"></iframe>
+          <p class="f4 lh-copy">
+            Another ways to change the flow is modifying what is shown to the viewer. Like below shapes and their
+          fills are modified depending where the mouse is. These changes are initiated by using simple reference 
+        numbers on the canvas.More sophisticated logic will be implemented by nesting or chaining these conditionals.</p>
+          <iframe src="https://editor.p5js.org/Kamalabot/full/t85Izz9s2" height="450px" width="400px"></iframe>
+          <p class="f4 lh-copy">
+            Else-If statement evaluates the first true statement and moves out of the loop. This creates difficult 
+            situation when trying to measure the variable with respect to a series of number ranges. What happens if 
+            the else-if is not used...
+          </p>
+          <iframe src="https://editor.p5js.org/Kamalabot/full/EkdbW6fmk" height="450px" width="400px"></iframe>
+          <p class="f4 lh-copy">When "Else-if logic is used you see something different. Shapes get removed 
+            from the canvas.
+          </p>
+          <iframe src="https://editor.p5js.org/Kamalabot/full/zLjsLiSmX" height="450px" width="400px"></iframe>
+          <p class="f4 lh-copy">There is more to conditional logic which will be taken up in another page, different
+            set of visuals. Some of the exercises to try are, programming rollover, button click. These will be explored
+            and shared here.
+          </p>
+      </div>
+    </section>
+</body>
+</html>
