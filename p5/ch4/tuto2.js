@@ -5,10 +5,11 @@ var backg = 0;
 function setup(){
     createCanvas(400,400)
     frameRate(25)
+    console.log(backg)
 }
 //working on the drawing, that is running continuously at 60 Hz
 function draw(){
-    background(backg,backg,0)
+    background(backg)
     noStroke()
     fill(random(60,170),random(10,255),random(0,150))
     rad = random(10,50)
@@ -16,7 +17,7 @@ function draw(){
     xCoord = xCoord + 5
     //this can be return as xCoord += 5 and this kind of operators can 
     //use with *, / and -
-    backg = map(mouseY,0,height,100,255) 
+    backg = map(mouseY,0,height,0,255) 
 } 
 
 function mousePressed(){
