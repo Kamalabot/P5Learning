@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>Conditional Play</title>
+    <title>Loopy P5</title>
     <link rel="stylesheet" href="../../libraries/tachyons/tachyons.min.css">
     <script src="../../libraries/p5.js"></script>
     <style>
@@ -19,41 +19,36 @@
     </a>
     <section class="cf w-100 pv2 flex flex-wrap">
       <div class="fl w-100 f4 tl">
-          <h1>Conditional P5</h1>
-          <p class="f4 lh-copy">While animating there is a challenge of the character, shape leaving the screen 
-            and never returning back, because of their coordinates. We have this problem in the animation shown 
-            below.
+          <h1>While.. For and All the Habits</h1>
+          <p class="f4 lh-copy">Repetitive and Mindless tasks are the favorite for the processors. When you look at the 
+            laptop, it seems to know everything you want and gives it you. The fact is, we humans love habits. Habits are 
+            kind of loops that we are comfortable. Lets see the Habit forming Loops...
           </p>
-          <iframe src="https://editor.p5js.org/Kamalabot/full/gN4kaeaqv" height="450px" width="400px"></iframe>
-          <p class="f4 lh-copy">
-            How to make it turn back? Enter the conditional expression in P5. These expression are 
-            used in the same way as Javascript. The above visual will have a ball bouncing of the walls  
-            kind of the action shown below. This was done with two if statements, which can be done with single 
-            conditional by using || like below
-            <pre><code>if(xCoord > width || xCoord < 0){
-        speed = speed * -1
-      }</code></pre>
+          <h2>Repeat Loop</h2>
+          <p class="f4 lh-copy">When a condition is true the code block in that condition needs to execute repeatedly, then 
+            use While loop.The pattern is to have "Exit condition" for the loop. Another way to get the same thing done is 
+            for... loop. Circles is created with For loop while the Rectangles where done using while loop. 
           </p>
-          <iframe src="https://editor.p5js.org/Kamalabot/full/UXSpoiQdz" height="450px" width="400px"></iframe>
-          <p class="f4 lh-copy">
-            Another ways to change the flow is modifying what is shown to the viewer. Like below shapes and their
-          fills are modified depending where the mouse is. These changes are initiated by using simple reference 
-        numbers on the canvas.More sophisticated logic will be implemented by nesting or chaining these conditionals.</p>
-          <iframe src="https://editor.p5js.org/Kamalabot/full/t85Izz9s2" height="450px" width="400px"></iframe>
-          <p class="f4 lh-copy">
-            Else-If statement evaluates the first true statement and moves out of the loop. This creates difficult 
-            situation when trying to measure the variable with respect to a series of number ranges. What happens if 
-            the else-if is not used...
+          <iframe src="https://editor.p5js.org/Kamalabot/full/r_7OrFi36" width="400px" height="450px"></iframe>
+      </div>
+      <div class="fl w-50 f4 tl">
+          <h2>Draw loop and Animation</h2>
+          <p>
+            We saw the draw loop produces the shapes on the canvas like a <strong>Flip Book</strong>, which is also a kind of loop. That is created by the program or 
+            the interpreter that executes our code. You can see the colors changing above randomly (frameRate is reduced to 5) and it 
+            is creating an illusion of animation, movement. That one visual has multiple concepts acting on it.
           </p>
-          <iframe src="https://editor.p5js.org/Kamalabot/full/EkdbW6fmk" height="450px" width="400px"></iframe>
-          <p class="f4 lh-copy">When "Else-if logic is used you see something different. Shapes get removed 
-            from the canvas.
+          <h2>Using Multiple For loops</h2>
+          <p>
+            In efficient way of controlling the activity in a program is by using loops where it is unnecessary. Like the visual 
+            on the left, where the circles are drawn twice. I have given a slight opacity to show what has happened. Now we are 
+            starting to play, aren't we???
           </p>
-          <iframe src="https://editor.p5js.org/Kamalabot/full/zLjsLiSmX" height="450px" width="400px"></iframe>
-          <p class="f4 lh-copy">There is more to conditional logic which will be taken up in another page, different
-            set of visuals. Some of the exercises to try are, programming rollover, button click. These will be explored
-            and shared here.
-          </p>
+        </div>
+        <div class="fl w-50 f4 tl">
+          <iframe src="https://editor.p5js.org/Kamalabot/full/0wUMomv66"  width="400px" height="450px"></iframe>
+        </div>
+        <p class="f4 lh-copy">With that brief play with loops lets enter into the world of Functions</p>
       </div>
     </section>
 </body>
