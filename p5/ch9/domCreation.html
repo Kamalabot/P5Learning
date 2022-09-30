@@ -18,8 +18,8 @@
       <span class="pr1">Home</span>
     </a>
     <section class="cf w-100 pv2 flex flex-wrap">
-      <div class="fl w-100 f4 tc">
-        <div class="w-50 tc ph3 fl" id="sketch">
+      <div class="fl w-100 f4 tl">
+        <div class="w-50 fl tl" id="sketch">
           <h1>Canvas Talks to the Web Page</h1>
         </div>
         <div class="w-50 fl pa1" id="domCreate">
@@ -35,6 +35,18 @@
       </div>
     </section>
     <section class="cf w-100 pv2 flex flex-wrap">
+      <div class="w-50 fl pa1">
+        <button id="myButton">Create Picture</button>
+        <button id="remPics">remove Pics</button>
+        <p class="lh-copy f4">Buttons above get the images or any other DOM element into the html 
+          page and has the callback function that can remove them from the page. Each time the <strong>Create Picture</strong> is 
+          pressed, you will 10 random pictures populating below somewhere. This happens how many times you press.
+          Follow that with <strong>remove Pics</strong> will conveniently delete all the images, without a trace. SelectAll() methhod
+          was used for this functionality.
+        </p>
+      </div>
+      <div class="w-50 fl pa1" id="myList">
+      </div>
     </section>
     <script src="sketch1.js"></script>
 </body>
