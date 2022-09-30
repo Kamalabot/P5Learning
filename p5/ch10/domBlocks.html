@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Selecting DOM</title>
+    <link rel="stylesheet" href="../../libraries/tachyons/tachyons.min.css">
+    <script src="../../libraries/p5.js"></script>
+    <style>
+      iframe{overflow:hidden}
+    </style>
+</head>
+
+<body class="helvetica pa1 bg-lightest-green">
+    <a href="../p5Index.html" class="f4 no-underline blue bg-animate hover-bg-green hover-white inline-flex items-center pa3 ba border-box mr4">
+        <span class="pl1">Visual Home</span>
+    </a>
+    <a href="../../index.html" class="f4 no-underline black bg-animate hover-bg-orange hover-white inline-flex items-right pa3 ba border-box mr4">
+      <span class="pr1">Home</span>
+    </a>
+    <section class="cf w-100 pv2 flex flex-wrap">
+      <div class="fl w-100 f4 tc">
+        <div class="w-50 tl ph3 fl">
+          <h1>Controlling DOM with JS</h1>
+          <p class="f4 lh-copy">What if I want to change the page elements with a click of button. Like there are two versions of the 
+            that is superimposed. This page can have all the headings colored green and para with blue in one version. In other version
+            the headings are purple and the para are orange.
+          </p>
+          <button id="changer" class="mr4">MagicButton</button>
+          <button id="remover">MagicRemoved</button>
+        </div>
+        <div class="w-50 fl pa1">
+          <h1>Power of Selectors</h1>
+          <p class="f4 lh-copy">There are many directions in which the code execution can be directed. Finally the state of 
+            something needs to be changed. That is the evidence that code as <strong>acted upon</strong> and the behaviour 
+            has changed. 
+          </p>
+          <p class="f4 lh-copy">
+            P5 recognises the CSS style selectors and attributes. This page has 3 states, where no 
+            color is applied. Two other states the color of the elements dynamically changes between 
+            two states.
+          </p>
+        </div>
+        <div class="w-50 tl ph3 fl">
+          <h1>Existing Classes Interfere</h1>
+          <p class="f4 lh-copy">Heading of the page change color with the buttons. The para elements are stubborn. Because of the 
+            classes that is already hard coded in creating this page. The P5 code is not having the ability to remove those classes 
+            out of the page.
+          </p>
+        </div>
+        <div class="w-50 tc ph3 fl">
+          <h1>Super Powered Button</h1>
+          <button id="superior" class="pa3">Super Power</button>
+        </div>
+      </div>
+    </section>
+    <section class="cf w-100 pv2 flex flex-wrap">
+    </section>
+    <script src="sketch1.js"></script>
+</body>
+</html>
