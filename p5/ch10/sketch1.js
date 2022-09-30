@@ -21,6 +21,19 @@ function setup(){
     remo.mouseClicked(removeMagic)
     console.log(heads)
 
+    for(let pr of paras){
+        pr.mouseOver(highlighter)
+        pr.mouseOut(unHighlighter)
+    }
+
+}
+
+function highlighter(){
+    this.style('color','purple')
+}
+
+function unHighlighter(){
+    this.style('color','yellow')
 }
 
 function styleBg(){
