@@ -9,9 +9,8 @@ var chosenFile;
 var wordList;
 var wordarr;
 function preload(){
-    wordList = loadJSON('https://raw.githubusercontent.com/dwyl/english-words/master/words_dictionary.json');
-    wordarr = Object.entries(wordList)
-    console.log(wordList)
+    // wordList = loadJSON('https://raw.githubusercontent.com/dwyl/english-words/master/words_dictionary.json');
+    wordList = loadJSON('words_dictionary.json');
 }
 
 function gotFile(file){
@@ -41,12 +40,43 @@ function lightDrop(){
     fileDrop.addClass('bg-green')
 }
 
+function findNoun(word){
+  var url = `https://dictionaryapi.com/api/v3/references/collegiate/json/${word}?key=ac4d9ce6-0379-40ff-8837-baf179ac9ed1`
+  var reply = loadJSON(url)
+  print(reply)
+  //return (reply[0].fl == 'noun')
+}
+
+function mousePressed(){
+  // print('initiating Change.')
+  let dictionary = Object.entries(wordList).map(t => t[0])
+  // print(dictionary)
+  var splitData = chosenFile.split(/[,. \s]/)
+  
+  const regex = /[!"#$%&'()*+,-./:;<=>?@[\]^_`{|}~]/g;
+  
+  var targetData = splitData;
+
+  for (let i = 0; i <= splitData.length; i++){
+    let temp = splitData[i].replace(regex,'')
+    findNoun(temp)
+  }  
+}
+
 function initiateChange(){
-    print('initiating Change.')
+    // print('initiating Change.')
+    let dictionary = Object.entries(wordList).map(t => t[0])
+    // print(dictionary)
     var splitData = chosenFile.split(/[,. \s]/)
-    var wordNoun;
-    var url = `https://dictionaryapi.com/api/v3/references/collegiate/json/${wordNoun}?key=ac4d9ce6-0379-40ff-8837-baf179ac9ed1`
-    print(splitData.slice(1,5))    
+    
+    const regex = /[!"#$%&'()*+,-./:;<=>?@[\]^_`{|}~]/g;
+    
+    var targetData = splitData;
+
+    for (let i = 0; i <= splitData.length; i++){
+      let temp = splitData[i].replace(regex,'')
+      findNoun(temp)
+    }  
 }
 
 function setup(){
@@ -68,5 +98,5 @@ function setup(){
         .parent('selectFile')
 
     makeChangeButton.mouseClicked(initiateChange)
-    //print(wordarr)
+    // print(wordList)
 }
