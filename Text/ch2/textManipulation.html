@@ -35,12 +35,67 @@
                 <textarea name="searchArea" id="search" cols="20" rows="2">Enter Search word</textarea>
                 <p class="lh-copy bg-yellow red" id="senOut"></p>
             </div>
-            <p>JavaScript and P5.js library together makes the process of getting the text file, 
+            <p>P5.js library makes the process of getting the text file very easy.  
                 manipulating the strings and providing outputs simpler. P5 like JQuery 
-                gives enough control over the DOM elements and allows a range of features to work with. 
+                gives enough control over the DOM elements and allows a range of 
+                features to work with. Below are some more implementation of text manipulation
+                with P5.
             </p>
+        </div>
+        <div class="fl w-100 f4 tl">
+            <h1>N+7 Word Swapper</h1>
+            <p class="f4 lh-copy">Nouns are all around us. Animate or inanimate, they are there in form of things, places, items, trinkets and the list goes on. The challenge is to 
+                find the noun in a given text and replace that noun with 7th one following in the dictionary. Provide the text that you want the 
+                nouns to be replaced. You can select the file, copy the contents or just drag the file below.
+            </p>
+            <h2 class="bg-light-green w-50">Input data with below Options</h2>
+            <div class="fl w-50 f4 tl">
+                <textarea name="yourText" id="yourText" cols="60" rows="15">Paste the Text here</textarea>
+                <p class="lh-copy pa4 outline f2" id="fileDrop">Drag in your File</p>
+                <p id="selectFile"></p>
+            </div>
+            <div class="fl w-50 f4">
+                <h3>Problem and Step Solution</h3>
+                <ul class="lh-copy f4">
+                    <li>Multiple ways of getting the text inputs needs to be coded.3 different methods 
+                        copy pasting the text, selecting the file by browsing and dragging and dropping the 
+                        file is implemented.
+                    </li>
+                    <li>Visual cues are given once the file data is recieved. When the file is dropped in the 
+                        the drop area, the area color highlights. Similarly, when the text is entered, it start 
+                        appearing in the "Your content area"
+                    </li>
+                    <li>Recieved data needs to be split, and nouns needs to be identified. For this 
+                        the free <a href="https://dictionaryapi.com/">OED dictionary API</a> is used.
+                    </li>
+                    <li>Need to locate the 7th word after the identified noun in the english dictionary.
+                        For this git hub repo <a href="https://raw.githubusercontent.com/dwyl/english-words/master/words_dictionary.json">by dwyl</a> is imported.
+                    </li>
+                    <li>
+                        After find the 7th word, that is word is replaced for all the occurences the text that is 
+                        provided by the user. 
+                    </li>
+                    <li>As addition, the nouns that are replaced are highlighted blue in the source File
+                        and highlighted orange in changed content.
+                    </li>
+                    <li> <strong>Do not pull files that ranges in multiple MBs,</strong> it will literally slowdown the 
+                        user experience. Even with asynchronous operation, the browser can only handle limited process
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="fl w-100 f4 tl">
+            <div class="fl w-50 f4">
+                <h3>Your File Contents</h3>
+                <p class="lh-copy f4" id="textShow"></p>
+            </div>
+            <div class="fl w-50 f4">
+                <h3>Updated Contents of your file</h3>
+                <p class="lh-copy f4" id="textChng"></p>
+            </div>
         </div>
     </section>
     <script src="main.js"></script>
+    <script src="textN7Implementation.js"></script>
 </body>
 </html>
