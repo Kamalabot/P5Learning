@@ -1,0 +1,5 @@
+Pluralsight’s Quick Start to JavaScript
+Learn how to write the programming language from scratch, so you can start creating code of your own.
+
+JavaScript Objects and Prototypes
+In-depth, behind-the-scenes details of creating JavaScript objects, manipulating properties, and using prototypal inheritance.

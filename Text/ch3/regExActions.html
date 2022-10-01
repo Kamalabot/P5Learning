@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Regexing Text</title>
+    <link rel="stylesheet" href="../../libraries/tachyons/tachyons.min.css">
+    <script src="../../libraries/p5.js"></script>
+</head>
+
+<body class="Roboto pa1 bg-near-white">
+    <a href="../textIndex.html" class="f4 no-underline blue bg-animate hover-bg-green hover-white inline-flex items-center pa3 ba border-box mr4">
+        <span class="pl1">Text Home</span>
+      </a>
+    <a href="../../index.html" class="f4 no-underline black bg-animate hover-bg-orange hover-white inline-flex items-right pa3 ba border-box mr4">
+      <span class="pr1">Home</span>
+    </a>
+    <section class="cf w-100 pv2 flex flex-wrap">
+        <div class="fl w-100 f4 tl">
+            <h1>Getting at the Texts</h1>
+            <p class="f4 lh-copy">
+                Regex give super power to programmers. One tool that helped me a lot in learning RegEx is <a href="https://regex101.com/">Regex 101</a> 
+                It is a userfriendly and expansive body of knowledge on the Regex, and it provide real time feedback when we experiment with the 
+                expressions. Here a very simpler version of the regex101 will be implemented using the P5js support.  
+            </p>
+            <p class="f4 lh-copy">
+                There are two fields below. One takes the text that you have and the other is the expression that you want to enter. 
+            </p>
+        </div>
+        <div class="fl w-100 f4 tl">
+            <textarea name="typeHere" id="textData" cols="30" rows="5">Enter your Food Ideas</textarea>
+            <input type="text" id="expr">
+            <p id="textOut"></p>
+        </div>
+        <button id="mat">Match</button>
+        <button id="tes">Test</button>
+    </section>
+    <section class="cf w-100 pv2 flex flex-wrap">
+        <div class="fl w-100 f4 tl">
+            <h1>Trial Texts</h1>
+            <p class="lh-copy f4"><span>Expression: </span><span class="bg-green">^[\w]+(?=@)@[\w-]+(?=\.)(\.([\w]){0,}(?=\.{1}))*\.{1}([\w]){0,6}$</span></p>
+            <p class="lh-copy f4"><span class="f3">Text: </span><span>
+                contact@regex101.com, Camle@gmail.com,Local@linl.li.in,Hinoar@niha-oonai.com,Hinoar@niha-oonai.comehtah, 
+                Locvn.krai.com, Legal, localpartgoeshere@foo.exam..ple.com
+            </span></p>
+
+            <p class="lh-copy f4"><span>Expression: </span><span class="bg-green">/(?:[A-Z]\.)+|[A-Z][a-z]+/gm</span></p>
+            <p class="lh-copy f4"><span class="f3">Text: </span><span>
+                works with strings such as: U.K.TanzaniaU.S.A., UkraineFrance, GermanyU.S.A.
+            </span></p>
+
+            <p class="lh-copy f4"><span>Expression: </span><span class="bg-green">/(?:[A-Z]\.)+|[A-Z][a-z]+/gm</span></p>
+            <p class="lh-copy f4"><span class="f3">Text: </span><span>
+                    before &ltbr&gtafter.
+                    Match only the tags&ltenclosed&gt like this
+                    Others let it be there
+                    &lttag like this and that&gt also need to match
+                    &lt/this&gt too will get selected.
+            </span></p>
+    <script src="main.js"></script>
+</body>
+</html>
