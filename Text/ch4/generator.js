@@ -1,46 +1,120 @@
+/*
+- Build a checkbox selector for libraries, and then link it to the activities that the libraries can perform. 
+    - When a library is checked the button with the name of activity performed needs to be highlighted
+
+- Go through the libraries and understand the activities that can be performed
+    - List down the activities that will be shown here
+    - List down the steps required to process each activity
+    - program the checkboxes to show the buttons accordingly
+
+- Design how the output of each activity will be shown after processing
+
+*/
+
 var textGiven;
-var expression;
 var dropper;
 
 var incomingText;
 
-var matcher;
-var tester;
-var execer;
+var ritaC;
+var compromiseC;
+var traceryC;
 
-var spliter;
-var replacer;
+var wcntB;
+var posB;
+var markovB;
+var generateB;
+var storyB;
+var emotionB;
 
-var htmlRep;
-var tagExp;
 
 function setup(){
     noCanvas()
     textGiven = select('#textData');
-    expression = select('#expr');
-    replaceStr = select('#substitute')
-    
-    htmlRep = select('#htmlreplace')
-    tagExp = select('#tagex')
-    tagExp.mouseClicked(tagExpand)
-
     dropper = select('#dropZone')
+
     dataOut = select("#output")
 
-    matcher = select('#mat')
-    tester = select('#tes')
-    execer = select('#exe')
-    replacer = select('#rep')
-    spliter = select("#spl")
+    ritaC = select('#RiTa')
+    compromiseC = select('#Compromise')
+    traceryC = select('#Tracery')
+    
+    ritaC.changed(changedRita)
+    compromiseC.changed(changedComp)
+    traceryC.changed(changedTracery)
 
-    matcher.mouseClicked(matchExpr)
-    tester.mouseClicked(testExpr)
-    execer.mouseClicked(execExpr)
-    replacer.mouseClicked(rplcExpr)
-    spliter.mouseClicked(splitExpr)
+    wcntB = select('#wcnt')
+    emotionB = select("#emotion")
+    storyB = select("#story")
+    generateB = select("#generate")
+    markovB = select("#markov")
+    posB = select("#pos")
+
+    wcntB.hide()
+    emotionB.hide()
+    storyB.hide()
+    generateB.hide()
+    markovB.hide()
+    posB.hide()
+
+
+    wcntB.mouseClicked(generateWordC)
+    emotionB.mouseClicked(generateEmotion)
+    storyB.mouseClicked(generateStory)
+    generateB.mouseClicked(generateMiscel)
+    markovB.mouseClicked(generateMarkov)
+    posB.mouseClicked(generatePos)
 
     dropper.drop(afterDrop)
 }
+
+
+//setting the button's visibility
+function changedRita(){
+    //console.log('got Sig Rita')
+    if(ritaC.checked() || compromiseC.checked()){
+        markovB.show()
+        posB.show()
+        wcntB.show()
+    }
+
+    if(!ritaC.checked()){
+        markovB.hide()
+        posB.hide()
+        wcntB.hide()
+    }
+
+}
+
+function changedComp(){
+    if(ritaC.checked() || compromiseC.checked()){
+        markovB.show()
+        posB.show()
+        wcntB.show()
+        generateB.show()
+    }
+
+    if(!compromiseC.checked()){
+        markovB.hide()
+        posB.hide()
+        wcntB.hide()
+        generateB.hide()
+    }
+}
+
+function changedTracery(){
+    if(traceryC.checked()){
+        emotionB.show()
+        storyB.show()
+    }
+
+    if(!traceryC.checked()){
+        emotionB.hide()
+        storyB.hide()
+    }
+
+}
+
 
 
 function processHtml(textData){
@@ -68,167 +142,26 @@ function afterDrop(fileIncoming){
     }
 }
 
-
-function tagExpand(){
-    const regex = /(<)|(>)/g;
-    // Alternative syntax using RegExp constructor
-    // const regex = new RegExp('(<)|(>)', 'g')
-    //const str = `/(?<=(\\s))<\\w+>(?=(\\s))|<(?<=<)[^<>]+(?=>)>|<(?<=<)\\/[^><]+(?=>)>|<>|<|>|(?<=(\\s))>\\w+(?=(\\s))|(?<=(\\s))<\\w+(?=(\\s))|[\\b.,?]\\s{2,}|\\b\\s{2,}|(?<=>)\\s+(?=<)/g`;
-    let htmlData = htmlRep.value()
-    // match is provided from the replace function
-    if(htmlData){
-        const result = htmlData.replace(regex, (match,g1,g2)=>{
-            if(match == "<"){
-                return "'&'lt"
-            }
-            if(match == ">"){
-                return "'&'gt"
-            }
-        });
-
-        createP(`${result}`)
-            .parent("htmlText")
-    } else {
-        createP('No HTML input')
-            .parent("htmlText")
-    }
-    
+function generatePos(){
+    console.log('got Sig')
 }
 
-function testExpr(){
-    let pageData = textGiven.html();
-    let pageProcessed = processHtml(pageData)
-    print(pageProcessed)
-    let locReg = new RegExp(expression.value())
-    let locRes = locReg.test(textGiven)
-    
-    var resPara = createP(locRes)
-            .parent('output')
+function generateMarkov(){
+    console.log('got Sig')
 }
 
-function matchExpr(){
-    let pageData = textGiven.html();
-    let pageProcessed = processHtml(pageData)
-    //print(pageProcessed)
-
-    let locReg = new RegExp(expression.value(), 'gi')
-
-    let locRes = pageProcessed.match(locReg)
-    
-    
-    if(select('#output').html()){
-        select('#output').html('')
-    }
-
-    if(locRes != null){
-        for (let word of pageProcessed.split(/[,.\s]+/)){
-            if(locRes.includes(word)){
-                createElement('span')
-                    .parent('output')
-                    .class('bg-green')
-                    .html(`${word} `)
-            } else {
-                createElement('span')
-                    .parent('output')
-                    .class('bg-orange')
-                    .html(`${word} `)
-            }
-
-        }
-    } else {
-        createElement('span')
-            .parent('output')
-            .class('bg-light-red')
-            .html(`No match. Check your Regex`)
-    }
-
+function generateMiscel(){
+    console.log('got Sig')
 }
 
-function splitExpr(){
-    let pageData = textGiven.html();
-    let pageProcessed = processHtml(pageData)
-    //print(pageProcessed)
-
-    let locReg = new RegExp(expression.value())
-
-    let locRes = pageProcessed.split(locReg)
-    
-    if(select('#output').html()){
-        select('#output').html('')
-    }
-
-    if (locRes.length > 1){
-        for (let word of locRes){
-            createP(`${word} `)
-                .parent('output')
-                .class('bg-green')
-        }
-    } else{
-        createElement('span')
-            .parent('output')
-            .class('bg-light-red')
-            .html(`No match. Check your Regex`)
-    }
+function generateStory(){
+    console.log('got Sig')
 }
 
-function rplcExpr(){
-    let pageData = textGiven.html();
-
-    let pageProcessed = processHtml(pageData)
-    //print(pageProcessed)
-
-    let locReg = new RegExp(expression.value(),'gi')
-
-    if(replaceStr.value() == ''){
-        createElement('span')
-            .parent('output')
-            .class('bg-light-red')
-            .html(`Provide the Replacement Text in the text Box`)
-    }else{
-        const result = pageProcessed.replace(locReg,(match)=>{
-            return createElement('span')
-                    .parent('output')
-                    .class('bg-green')
-                    .html(`${match} `)                
-        })
-
-        const buildReplacer = createElement('span')
-            .class('bg-pink')
-            .html(replaceStr.value())
-
-        const replaceResult = pageProcessed.replace(locReg,replaceStr.value())
-        createP(replaceResult)
-            .parent('output')
-
-    }
-
+function generateEmotion(){
+    console.log('got Sig')
 }
 
-function execExpr(){
-
-    let pageData = textGiven.html();
-    let pageProcessed = processHtml(pageData)
-    //print(pageProcessed)
-    
-    if(select('#output').html()){
-        select('#output').html('')
-    }
-    
-    let locReg = new RegExp(expression.value(),'gi')
-
-    var locRes = locReg.exec(pageProcessed);
-
-    let calls = 1;
-
-    while(locRes != null){
-        print(calls)
-        createElement('span')
-            .parent('output')
-            .class('bg-green')
-            .html(`Match_${calls}: ${locRes} `)
-        
-        locRes = locReg.exec(pageProcessed)
-        calls++
-    }
-    
+function generateWordC(){
+    console.log('got Sig')
 }
