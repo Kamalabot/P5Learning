@@ -1,0 +1,86 @@
+{
+  "_from": "compromise-hash",
+  "_id": "compromise-hash@0.0.3",
+  "_inBundle": false,
+  "_integrity": "sha512-LaHDkG4BPd6xn3TubHZQPyDHJNbelfb2fFRwFDXr29bf2Dcp8m/2e5MTZXz1RVBnZ5hjJ6zhUVQeCTiqd/7iPQ==",
+  "_location": "/compromise-hash",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "tag",
+    "registry": true,
+    "raw": "compromise-hash",
+    "name": "compromise-hash",
+    "escapedName": "compromise-hash",
+    "rawSpec": "",
+    "saveSpec": null,
+    "fetchSpec": "latest"
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/compromise-hash/-/compromise-hash-0.0.3.tgz",
+  "_shasum": "3ba34d1102e1561df6a531c985638970621bc8f2",
+  "_spec": "compromise-hash",
+  "_where": "C:\\RepoFolder\\p5_TextPrgming",
+  "author": {
+    "name": "Spencer Kelly",
+    "email": "spencermountain@gmail.com",
+    "url": "http://spencermounta.in"
+  },
+  "bugs": {
+    "url": "https://github.com/spencermountain/compromise/issues"
+  },
+  "bundleDependencies": false,
+  "dependencies": {
+    "pure-md5": "0.1.13"
+  },
+  "deprecated": false,
+  "description": "plugin for nlp-compromise",
+  "devDependencies": {
+    "@rollup/plugin-commonjs": "17.1.0",
+    "@rollup/plugin-json": "4.1.0",
+    "@rollup/plugin-node-resolve": "11.2.0",
+    "rollup": "2.40.0",
+    "rollup-plugin-babel": "4.4.0",
+    "rollup-plugin-filesize-check": "0.0.1",
+    "rollup-plugin-terser": "7.0.2",
+    "tap-dancer": "0.3.1",
+    "tape": "5.2.0"
+  },
+  "eslintIgnore": [
+    "builds/*.js"
+  ],
+  "files": [
+    "builds/",
+    "types/index.d.ts"
+  ],
+  "homepage": "https://github.com/spencermountain/compromise#readme",
+  "license": "MIT",
+  "main": "./builds/compromise-hash.js",
+  "module": "./builds/compromise-hash.mjs",
+  "name": "compromise-hash",
+  "peerDependencies": {
+    "compromise": ">=12.0.0"
+  },
+  "prettier": {
+    "trailingComma": "es5",
+    "tabWidth": 2,
+    "semi": false,
+    "singleQuote": true,
+    "printWidth": 100
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/spencermountain/compromise.git"
+  },
+  "scripts": {
+    "build": "rollup -c --silent",
+    "test": "tape \"./tests/**/*.test.js\" | tap-dancer  --color always",
+    "testb": "TESTENV=prod tape \"./tests/**/*.test.js\" | tap-dancer  --color always",
+    "watch": "amble ./scratch.js"
+  },
+  "types": "types/index.d.ts",
+  "unpkg": "./builds/compromise-hash.min.js",
+  "version": "0.0.3"
+}

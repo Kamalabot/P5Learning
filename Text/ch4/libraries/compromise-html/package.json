@@ -1,0 +1,87 @@
+{
+  "_from": "compromise-html",
+  "_id": "compromise-html@0.0.4",
+  "_inBundle": false,
+  "_integrity": "sha512-eQBLAWocJejLPaK+E7Hiapcvr36XCkU9Q5NUgYb5BdkwOaQty/KRiURWwrslmme6IPPIksepXhPMtCwtNTI+sg==",
+  "_location": "/compromise-html",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "tag",
+    "registry": true,
+    "raw": "compromise-html",
+    "name": "compromise-html",
+    "escapedName": "compromise-html",
+    "rawSpec": "",
+    "saveSpec": null,
+    "fetchSpec": "latest"
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/compromise-html/-/compromise-html-0.0.4.tgz",
+  "_shasum": "f55b7af74632850b282b5d35e781e380ff08da57",
+  "_spec": "compromise-html",
+  "_where": "C:\\RepoFolder\\p5_TextPrgming",
+  "author": {
+    "name": "Spencer Kelly",
+    "email": "spencermountain@gmail.com",
+    "url": "http://spencermounta.in"
+  },
+  "bugs": {
+    "url": "https://github.com/spencermountain/compromise/issues"
+  },
+  "bundleDependencies": false,
+  "dependencies": {
+    "htm": "3.0.4",
+    "vhtml": "2.2.0"
+  },
+  "deprecated": false,
+  "description": "plugin for nlp-compromise",
+  "devDependencies": {
+    "@rollup/plugin-commonjs": "11.0.1",
+    "@rollup/plugin-json": "4.0.1",
+    "@rollup/plugin-node-resolve": "7.0.0",
+    "rollup": "1.30.1",
+    "rollup-plugin-babel": "4.3.3",
+    "rollup-plugin-filesize-check": "0.0.1",
+    "rollup-plugin-terser": "7.0.2",
+    "tap-dancer": "0.3.1",
+    "tape": "5.0.1"
+  },
+  "eslintIgnore": [
+    "builds/*.js"
+  ],
+  "files": [
+    "builds/",
+    "types/index.d.ts"
+  ],
+  "homepage": "https://github.com/spencermountain/compromise#readme",
+  "license": "MIT",
+  "main": "./builds/compromise-html.js",
+  "module": "./builds/compromise-html.mjs",
+  "name": "compromise-html",
+  "peerDependencies": {
+    "compromise": ">=12.0.0"
+  },
+  "prettier": {
+    "trailingComma": "es5",
+    "tabWidth": 2,
+    "semi": false,
+    "singleQuote": true,
+    "printWidth": 100
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/spencermountain/compromise.git"
+  },
+  "scripts": {
+    "build": "rollup -c --silent",
+    "test": "tape \"./tests/**/*.test.js\" | tap-dancer  --color always",
+    "testb": "TESTENV=prod tape \"./tests/**/*.test.js\" | tap-dancer  --color always",
+    "watch": "amble ./scratch.js"
+  },
+  "types": "types/index.d.ts",
+  "unpkg": "./builds/compromise-html.min.js",
+  "version": "0.0.4"
+}

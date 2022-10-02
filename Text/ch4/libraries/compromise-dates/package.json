@@ -1,0 +1,80 @@
+{
+  "_from": "compromise-dates",
+  "_id": "compromise-dates@3.4.1",
+  "_inBundle": false,
+  "_integrity": "sha512-5IRiIxuOXgRyzFy8Or+BaFLFTMLB4aV8Y88ynytvgSDb/xcGT93AKCEgxSLw7Gp1qlWZ7ZJ5X8UnrrtPRdK3hQ==",
+  "_location": "/compromise-dates",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "tag",
+    "registry": true,
+    "raw": "compromise-dates",
+    "name": "compromise-dates",
+    "escapedName": "compromise-dates",
+    "rawSpec": "",
+    "saveSpec": null,
+    "fetchSpec": "latest"
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/compromise-dates/-/compromise-dates-3.4.1.tgz",
+  "_shasum": "29ae8834945b202a85b1e604ce36cfb996e8f502",
+  "_spec": "compromise-dates",
+  "_where": "C:\\RepoFolder\\p5_TextPrgming",
+  "author": {
+    "name": "Spencer Kelly",
+    "email": "spencermountain@gmail.com",
+    "url": "http://spencermounta.in"
+  },
+  "bugs": {
+    "url": "https://github.com/spencermountain/compromise/issues"
+  },
+  "bundleDependencies": false,
+  "dependencies": {
+    "spacetime": "7.1.4",
+    "spacetime-holiday": "0.3.0"
+  },
+  "deprecated": false,
+  "description": "plugin for nlp-compromise",
+  "eslintIgnore": [
+    "builds/*.js"
+  ],
+  "exports": {
+    ".": {
+      "import": "./src/plugin.js",
+      "require": "./builds/compromise-dates.cjs"
+    }
+  },
+  "files": [
+    "builds/",
+    "src/",
+    "types/index.d.ts"
+  ],
+  "homepage": "https://github.com/spencermountain/compromise/tree/master/plugins/dates",
+  "license": "MIT",
+  "main": "./src/plugin.js",
+  "module": "./builds/compromise-dates.mjs",
+  "name": "compromise-dates",
+  "peerDependencies": {
+    "compromise": ">=14.2.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/spencermountain/compromise.git"
+  },
+  "scripts": {
+    "build": "npm run version && rollup -c --silent",
+    "perf": "node ./scripts/perf.js",
+    "test": "tape \"./tests/**/*.test.js\" | tap-dancer  --color always",
+    "testb": "TESTENV=prod tape \"./tests/**/*.test.js\" | tap-dancer  --color always",
+    "version": "node ./scripts/version.js",
+    "watch": "amble ./scratch.js"
+  },
+  "sideEffects": false,
+  "type": "module",
+  "types": "index.d.ts",
+  "unpkg": "./builds/compromise-dates.min.js",
+  "version": "3.4.1"
+}

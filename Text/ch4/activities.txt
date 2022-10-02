@@ -70,6 +70,10 @@ Compromise:
   return doc.json()[0].terms.map(t=>[t.text, t.penn])
 }
 npm install compromise-syllables compromise-sentences compromise-paragraphs compromise-ngrams compromise-keypress compromise-hash compromise-html compromise-export compromise-dates compromise-adjectives compromise-speech
+
+i) nlp(`hey pal, did you get a load of the nerd?`).sentences().toPresentTense().text()
+j) understanding how to use the nlp plugins
+
 Tracery:
     a) Context Free Grammar
     b) 

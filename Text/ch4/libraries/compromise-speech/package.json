@@ -1,0 +1,71 @@
+{
+  "_from": "compromise-speech",
+  "_id": "compromise-speech@0.1.0",
+  "_inBundle": false,
+  "_integrity": "sha512-+2KS/8T3SH5Hcd6tsCBVfxrkdi7sbJfKAeXGYimQdKGgweDMt0FT03wVCDZ6EgLYxReftkRKp1pxLx2pQLj4Kg==",
+  "_location": "/compromise-speech",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "tag",
+    "registry": true,
+    "raw": "compromise-speech",
+    "name": "compromise-speech",
+    "escapedName": "compromise-speech",
+    "rawSpec": "",
+    "saveSpec": null,
+    "fetchSpec": "latest"
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/compromise-speech/-/compromise-speech-0.1.0.tgz",
+  "_shasum": "4ca319787ffec6c1372f3f8aa7f9956cffb0d9c8",
+  "_spec": "compromise-speech",
+  "_where": "C:\\RepoFolder\\p5_TextPrgming",
+  "author": {
+    "name": "Spencer Kelly",
+    "email": "spencermountain@gmail.com",
+    "url": "http://spencermounta.in"
+  },
+  "bugs": {
+    "url": "https://github.com/spencermountain/compromise/issues"
+  },
+  "bundleDependencies": false,
+  "dependencies": {},
+  "deprecated": false,
+  "description": "plugin for nlp-compromise",
+  "devDependencies": {},
+  "eslintIgnore": [
+    "builds/*.js"
+  ],
+  "exports": {
+    ".": {
+      "import": "./src/plugin.js",
+      "require": "./builds/compromise-speech.cjs"
+    }
+  },
+  "homepage": "https://github.com/spencermountain/compromise/tree/master/plugins/speech",
+  "license": "MIT",
+  "main": "./src/plugin.js",
+  "module": "./builds/compromise-speech.mjs",
+  "name": "compromise-speech",
+  "peerDependencies": {
+    "compromise": ">=14.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/spencermountain/compromise.git"
+  },
+  "scripts": {
+    "build": "rollup -c --silent",
+    "test": "tape \"./tests/**/*.test.js\" | tap-dancer  --color always",
+    "testb": "TESTENV=prod tape \"./tests/**/*.test.js\" | tap-dancer  --color always",
+    "watch": "amble ./scratch.js"
+  },
+  "sideEffects": false,
+  "type": "module",
+  "types": "index.d.ts",
+  "unpkg": "./builds/compromise-speech.min.js",
+  "version": "0.1.0"
+}
