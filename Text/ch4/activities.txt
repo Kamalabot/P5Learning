@@ -1,0 +1,75 @@
+- Go through the libraries one by one 
+    - Find interesting functions
+        a) List them here
+        b) Learn more about them
+        c) Program them
+
+RiTa:
+    a) Word Count
+        
+    b) POS
+    RiTa.tokenize("The elephant took a bite!")
+    RiTa.phones("An elephant is a mammal");
+    RiTa.pos("I am hungry");
+
+    RiTa.sentences("'What's happened to me?' he thought. It wasn't a dream. 
+  His room, a proper human room although a little too small, lay peacefully 
+  between its four familiar walls.");
+
+  RiTa.pluralize("apple")
+  RiTa.stem("write writes writing writings.");
+    c) Markov Generation
+        RiTa.rhymes('sweet')
+
+    d) Analyze
+    RiTa.tokenize("The elephant took a bite!")
+
+    e) Grammar
+        rules = {
+  start:    "$subject $verb $object.",
+  subject:  "I | You | They",
+  object:   "coffee | bread | milk",
+  verb:     "want | hate | like | love"
+}
+      let rg = RiTa.grammar(rules);  // load our grammar
+  let result = rg.expand();      // and then run it!
+
+    f) getting word count:
+      let args = { ignoreCase: true };
+      RiTa.concordance("Summer is hot. It is hot today.", args);
+      cod = nlp(myText)
+      cod.out('json')
+    
+    g) review the examples in Rita https://rednoise.org/rita/index.html#examples 
+        and implement some for the regular texts. 
+Compromise:
+    a) Getting topics from a text and Using Wikipedia to get information on the topics
+        arr = nlp(text).places() | .organisation() | .topics()  
+    b) Grabbing Sentences
+        let doc=nlp('Read my lips. no new taxes.' return doc.eq(1).out('text')    
+    c) parsing and matching parts of speech
+        nlp('powerful like a gorilla, yet soft and yielding like a nerf ball').match('#Adjective').out('tags')
+        nlp('Hey, teacher! leave those kids alone').match('those #Plural').text()
+    d) POS tagging 
+    e) word counting / frequency generation / POS frequency
+    f) expand the contractions tmp.contractions().expand()
+    g) can create autofill options,
+        {
+  // add the words we should predict from
+  nlp.typeahead(words, { min: 3 })
+  // create a document
+  let doc = nlp(text, words)
+  // assume prefixes
+  doc.autoFill()
+  // print-out the assumed text
+  return doc.text('implicit')
+}
+    h) Computing the Penn Tags:
+      let doc = nlp('in the town where I was born')
+  doc.compute('penn')
+  return doc.json()[0].terms.map(t=>[t.text, t.penn])
+}
+npm install compromise-syllables compromise-sentences compromise-paragraphs compromise-ngrams compromise-keypress compromise-hash compromise-html compromise-export compromise-dates compromise-adjectives compromise-speech
+Tracery:
+    a) Context Free Grammar
+    b) 

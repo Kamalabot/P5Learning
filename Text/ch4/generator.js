@@ -115,8 +115,6 @@ function changedTracery(){
 
 }
 
-
-
 function processHtml(textData){
     let htmlReg = "(?<=(\s))<\w+>(?=(\s))|<(?<=<)[^<>]+(?=>)>|<(?<=<)\/[^><]+(?=>)>|<>|<|>|(?<=(\s))>\w+(?=(\s))|(?<=(\s))<\w+(?=(\s))|[\b.,?]\s{2,}|\b\s{2,}|(?<=>)\s+(?=<)"
     let regEx = new RegExp(htmlReg,'g')
@@ -141,6 +139,10 @@ function afterDrop(fileIncoming){
             .parent('textData')
     }
 }
+
+printList=function(doc){
+    return JSON.stringify(doc.out('array'), null, 2)
+  }
 
 function generatePos(){
     console.log('got Sig')
