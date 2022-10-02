@@ -22,6 +22,10 @@
                 It is a userfriendly and expansive body of knowledge on the Regex, and it provide real time feedback when we experiment with the 
                 expressions. Here a very simpler version of the regex101 will be implemented using the P5js support.  
             </p>
+            <p class="f4 lh-copy">In order to process the text provided by the user <strong>i.e YOU</strong> or take the text already on this page examples, some 
+            cleaning is required. The text that is shown <strong>Under Process:</strong> has markup surrounding it. If we need to do any text processing, then 
+        the html tags and unwanted spaces needs to be removed. To do that, replace() function is used. The tags are numerous types, hard coding them will be a challenge
+    so the <span class="purple">"</span> </p>
             <p class="f4 lh-copy">
                 There are two fields below. One takes the text that you have and the other is the expression that you want to enter. 
                 There are multiple ways to execute the regex in JS. They are,
@@ -35,52 +39,43 @@
             </p>
         </div>
         <div class="fl w-100 f4 tl">
-            <textarea name="typeHere" id="textData" cols="30" rows="5">Enter your Food Ideas</textarea>
+            <h1>Under Process:</h1>
+            <div id="textData">
+                <p class="lh-copy f4">Check if a string contains the 2 letter word followed by 2 digit number and followed by 
+                    letters, with spacing in between. All case insensitive emails are provided.
+                    Please make a note of them. contact@regex101.com, Camle@gmail.com,Local@linl.li.in,Hinoar@niha-oonai.com,Hinoar@niha-oonai.comehtah, 
+                    Locvn.krai.com, Legal, localpartgoeshere@foo.exam..ple.com</p>
+                <p class="lh-copy">There are multiple numbers below representing different information,
+                    quantities and distances .1.0e112, 1.7855, 74556, 25.7862, 1.5e
+                    "(Alice Wonderland)(?!')". In what ways the above text can be meaning fully cleaned and the 
+                    information inside that can be extracted?
+                </p>
+            </div>
+            <p class="lh-copy">If you have another file that you want to extract information, use the below drop zone.</p>
+            <p id="dropZone" class="pa5 outline w-50 f3">Drop your Text files(*.txt) here</p>    
             <span class="pa1">RegEx Here: </span><input type="text" id="expr" name="RegularExpression" class="pa1">
-            <p class="lh-copy f3">Expected Output: </p>
-            <p id="textOut" class="w-25"></p>
+            <span class="pa1">Replacing Words: </span><input type="text" id="substitute" name="Replace Term" class="pa1">
+            <span class="pa1">HTML String: </span><input type="text" id="htmlreplace" name="Replace Term" class="pa1">
         </div>
-        <button id="mat" class="mr4">Match</button>
-        <button id="tes" class="mr4">Test</button>
-        <button id="exe" class="mr4">exec</button>
-        <button id="exe" class="mr4">split</button>
-        <button id="exe" class="mr4">replace</button>
-        <p class="lh-copy f4 blue">Note, the replace function can have a 
-            callback. The callback can execute other code, and then whatever 
-            it returns goes as th 
+        <div class="fl w-100 f4 tl pa4">
+            <button id="mat" class="mr4">Match</button>
+            <button id="tes" class="mr4">Test</button>
+            <button id="exe" class="mr4">exec</button>
+            <button id="spl" class="mr4">split</button>
+            <button id="rep" class="mr4">replace</button>
+            <button id="tagex" class="mr4">HTML Expander</button>
+        </div>
+        <p class="lh-copy f4">If you want to display html code on html page needs the &lt or &gt symbol to be converted to text with 
+            '&'lt and '&'gt. HTML string can be input in the "HTML String" text box and html replacer can be used. 
         </p>
+        <p class="lh-copy f4" id="htmlText"></p>
     </section>
     <section class="cf w-100 pv2 flex flex-wrap">
+        <h1>Output Texts</h1>
         <div class="fl w-100 f4 tl">
-            <h1>Trial Texts</h1>
-
-            <p class="lh-copy f4"><span>Expression: </span><span class="bg-green">\w{2}\s\d{2}\s\w+</span></p>
-            <p class="lh-copy f4"><span class="f3">Explanation: </span><span>
-                Check if a string contains the 2 letter word followed by 2 digit number and followed by 
-                letters, with spacing in between. All case insensitive.
-            </span></p>
-
-            <p class="lh-copy f4"><span>Expression: </span><span class="bg-green">^[\w]+(?=@)@[\w-]+(?=\.)\.\w+</span></p>
-            <p class="lh-copy f4"><span class="f3">Explanation: </span><span>
-                Matches the email Ids partly in the sentences like this: 
-                contact@regex101.com, Camle@gmail.com,Local@linl.li.in,Hinoar@niha-oonai.com,Hinoar@niha-oonai.comehtah, 
-                Locvn.krai.com, Legal, localpartgoeshere@foo.exam..ple.com
-            </span></p>
-
-            <p class="lh-copy f4"><span>Expression: </span><span class="bg-green">/(?:[A-Z]\.)+|[A-Z][a-z]+/gm</span></p>
-            <p class="lh-copy f4"><span class="f3">Text: </span><span>
-                Finds country names: U.K.TanzaniaU.S.A., UkraineFrance, GermanyU.S.A.
-            </span></p>
-
-            <p class="lh-copy f4"><span>Expression: </span><span class="bg-green">/(?:[A-Z]\.)+|[A-Z][a-z]+/gm</span></p>
-            <p class="lh-copy f4"><span class="f3">Text: </span><span>
-                    Finds the HTML tags in  
-                    before &ltbr&gtafter.
-                    Match only the tags&ltenclosed&gt like this
-                    Others let it be there
-                    &lttag like this and that&gt also need to match
-                    &lt/this&gt too will get selected.
-            </span></p>
+            <p class="lh-copy f4" id="output"></p>
+        </div>
+    </section>
     <script src="main.js"></script>
 </body>
 </html>
