@@ -42,6 +42,8 @@ RiTa:
     
     g) review the examples in Rita https://rednoise.org/rita/index.html#examples 
         and implement some for the regular texts. 
+
+
 Compromise:
     a) Getting topics from a text and Using Wikipedia to get information on the topics
         arr = nlp(text).places() | .organisation() | .topics()  

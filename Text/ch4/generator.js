@@ -15,10 +15,12 @@ var textGiven;
 var dropper;
 
 var incomingText;
+var about;
 
 var ritaC;
 var compromiseC;
 var traceryC;
+var wikiC;
 
 var wcntB;
 var posB;
@@ -34,29 +36,27 @@ function setup(){
     dropper = select('#dropZone')
 
     dataOut = select("#output")
+    about = select('#about')
 
     ritaC = select('#RiTa')
     compromiseC = select('#Compromise')
     traceryC = select('#Tracery')
+    wikiC = select('#wiki')
     
     ritaC.changed(changedRita)
     compromiseC.changed(changedComp)
     traceryC.changed(changedTracery)
+    wikiC.changed(changedWiki)
 
     wcntB = select('#wcnt')
     emotionB = select("#emotion")
-    storyB = select("#story")
+    storyB = select("#topic")
     generateB = select("#generate")
     markovB = select("#markov")
     posB = select("#pos")
 
-    wcntB.hide()
     emotionB.hide()
     storyB.hide()
-    generateB.hide()
-    markovB.hide()
-    posB.hide()
-
 
     wcntB.mouseClicked(generateWordC)
     emotionB.mouseClicked(generateEmotion)
@@ -72,47 +72,77 @@ function setup(){
 //setting the button's visibility
 function changedRita(){
     //console.log('got Sig Rita')
-    if(ritaC.checked() || compromiseC.checked()){
-        markovB.show()
-        posB.show()
-        wcntB.show()
+    if(select("#about").html()){
+        select("#about").html('')
     }
-
+    if(ritaC.checked()){
+    createP('Strength of RiTa is generating alternate texts using the one you have provided. It does POS and Grammar creation too.')
+            .class('lh-copy f4')
+            .parent('about')
+    }
     if(!ritaC.checked()){
-        markovB.hide()
-        posB.hide()
-        wcntB.hide()
+        createP('')
+        .class('lh-copy f4')
+        .parent('about')
     }
-
 }
 
 function changedComp(){
-    if(ritaC.checked() || compromiseC.checked()){
-        markovB.show()
-        posB.show()
-        wcntB.show()
-        generateB.show()
+        //console.log('got Sig Rita')
+    if(select("#about").html()){
+        select("#about").html('')
     }
-
+    if(compromiseC.checked()){    
+    createP('Topic Generation, POS extraction, Grammar Creation and Text Analysis. You name it, Compromise does it')
+        .class('lh-copy f4')
+        .parent('about')
+    }
     if(!compromiseC.checked()){
-        markovB.hide()
-        posB.hide()
-        wcntB.hide()
-        generateB.hide()
+        createP('')
+        .class('lh-copy f4')
+        .parent('about')
     }
 }
 
 function changedTracery(){
+    if(select("#about").html()){
+        select("#about").html('')
+    }    
     if(traceryC.checked()){
+    createP('Tracery is Context Free Grammar based Story Generator. It does not stop there!!! Will be explored differently, wait for it...')
+        .class('lh-copy f4')
+        .parent('about')
+    }
+    if(!traceryC.checked()){
+        createP('')
+        .class('lh-copy f4')
+        .parent('about')
+    }
+
+}
+
+function changedWiki(){
+    if(select("#about").html()){
+        select("#about").html('')
+    }
+    if(wikiC.checked()){
         emotionB.show()
         storyB.show()
-    }
 
-    if(!traceryC.checked()){
+        createP('Library with Super Powers with access to Wikipedia. Provides API to wiki database, and allows to do more by structuring the data.')
+        .class('lh-copy f4')
+        .parent('about')
+
+    }
+    if(!wikiC.checked()){
         emotionB.hide()
         storyB.hide()
-    }
+        
+        createP('')
+        .class('lh-copy f4')
+        .parent('about')
 
+    }
 }
 
 function processHtml(textData){
@@ -124,9 +154,13 @@ function processHtml(textData){
 
 function afterDrop(fileIncoming){
     incomingText = fileIncoming.data;
+    //replace the existing text with the user data.
+    if(select('#textData').html()){
+        select('#textData').html('')
+    }
     if(fileIncoming.type == 'text'){
         //creating Heading
-        createElement('h1')
+        createElement('h4')
             .parent('textData')
             .html('Your File Data')
         //bringing in the data
@@ -145,7 +179,8 @@ printList=function(doc){
   }
 
 function generatePos(){
-    console.log('got Sig')
+    //give preference to RiTa
+    print('recd Sig')
 }
 
 function generateMarkov(){
@@ -165,5 +200,67 @@ function generateEmotion(){
 }
 
 function generateWordC(){
-    console.log('got Sig')
+    //getting data
+    let getData  = processHtml(textGiven.html())
+    //making Compromise Object
+    let nlpObject = nlp(getData)
+    // Showing the No of Sentences
+    createElement('div')
+        .parent('output')
+        .class('w-25 f4')
+        .id('sentence')
+
+    createElement('h3')
+        .parent('sentence')
+        .html('No of Sentences')
+    
+    createP(nlpObject.length)
+        .parent('sentence')
+        .class('f1 tc')
+
+    // Showing the No of Words
+    createElement('div')
+        .parent('output')
+        .class('w-25 f4')
+        .id('wordC')
+
+    createElement('h3')
+        .parent('wordC')
+        .html('No of words')
+    
+    createP(nlpObject.wordCount())
+        .parent('wordC')
+        .class('f1 tc')
+    // Showing the first sentences and its tags
+    createElement('div')
+        .parent('output')
+        .class('w-50 f4')
+        .id('sentF')
+
+    createElement('h3')
+        .parent('sentF')
+        .html('First Sentence')
+
+    createP(nlpObject.sentences().eq(0).text())
+        .parent('sentF')
+        .class('f5 tc')
+
+    // coloring POS tags
+    createElement('div')
+        .parent('output')
+        .class('w-50 f4')
+        .id('tagP')
+
+    createElement('h3')
+        .parent('tagP')
+        .html('POS Tagged')
+    let tagObject = myObj.json()[0].terms.map(t=>[t.text, t.penn])
+    let tagSet = new Set(myObj.json()[0].terms.map(t=> t.penn))
+    let pennUrl = 'https://www.ling.upenn.edu/courses/Fall_2003/ling001/penn_treebank_pos.html'
+    
+    createP(nlpObject.sentences().eq(0).text())
+        .parent('tagP')
+        .class('f5 tc')
+
+    return nlpObject
 }

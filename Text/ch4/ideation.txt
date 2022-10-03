@@ -1,0 +1,33 @@
+POS tagging:
+step 1: Processing the text into the library
+step 2: identifying the POS tags
+step 3: counting which POS is more 
+step 4: display the top most POS 
+    POS1 : word1, 2,3,..
+    pos2 : word 1,2,3,
+
+Extracting Topics:
+Step1: Processing text into the library
+step2: Extracting Topics 
+step3: Create button of the topics
+step3: Sending topic to Wiki on button klick
+step4: Getting the details on the topics
+step5: Displaying the details of the topic or saying no data available
+
+Extracting information from Wiki:
+step1: process the topic to WTF
+step2: Recieve the information 
+step3: populate it in the output
+
+Generating alternate texts from the context free grammar:
+Step1: process the text into the library
+step2: create the markov model
+Step3: generate the grammar
+step4: Output 2 to 3 scenarios auto generated.
+
+Generating alternate texts with library option:
+Step1: Process the text in to the library
+step2: locate the POS in the library
+step3: Each located POS, find appropriate random word of same POS
+step4: Build the output
+step5: Display the output.

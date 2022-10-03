@@ -9,7 +9,7 @@
     <script src="libraries/tracery.js"></script>
     <script src="../../libraries/p5.js"></script>
     <script src="libraries/compromise-sentences.min.js"></script>
-    <script src="libraries/compromise-syllables.min.js"></script>
+    <script src="libraries/compromise-syllables.min.js00"></script>
 </head>
 
 <body class="Roboto pa1 bg-near-white">
@@ -29,7 +29,8 @@
                 <ul>
                     <li>RiTa <a href="https://rednoise.org/rita/">Daniel Howe</a></li>
                     <li>Compromise Cool <a href="https://compromise.cool/">Spencer Mountain</a></li>
-                    <li>Tracery <a href="http://www.crystalcodepalace.com/traceryTut.html"></a>Kate Compton</li>
+                    <li>Tracery <a href="http://www.crystalcodepalace.com/traceryTut.html">Kate Compton</a></li>
+                    <li>WTF WikiPedia <a href="https://observablehq.com/@spencermountain/wtf_wikipedia">Spencer Mountain</a></li>
                 </ul>
             </p>
             <h3>Why L1?</h3>
@@ -49,13 +50,16 @@
             <span>RiTA: </span><input type="checkbox" id="RiTa" name="RiTa" class="pa1 ml1">
             <span>Compromise: </span><input type="checkbox" id="Compromise" name="Compromise" class="pa1 ml1">
             <span>Tracery: </span><input type="checkbox" id="Tracery" name="Tracery" class="pa1 ml1">
+            <span>Wiki WTF: </span><input type="checkbox" id="wiki" name="Wiki" class="pa1 ml1">
+            <p class="lh-copy f4" id="about"></p>
+            <h4>Choose an activity by a click: </h4>
             <div class="fl w-100 f4 pa4">
-                <button id="wcnt" class="mr4 mv3">wordCount</button>
+                <button id="wcnt" class="mr4 mv3">Counting Words</button>
                 <button id="pos" class="mr4 mv3">Visual POS</button>
-                <button id="markov" class="mr4 mv3">Markovian Generate</button>
-                <button id="generate" class="mr4 mv3">Miscellaneous</button>
-                <button id="story" class="mr4 mv3">Story Generation</button>
-                <button id="emotion" class="mr4 mv3">Emotion Classification</button>
+                <button id="markov" class="mr4 mv3">Markovian Stories</button>
+                <button id="generate" class="mr4 mv3">Topic Generation</button>
+                <button id="topic" class="mr4 mv3">Info Extraction</button>
+                <button id="emotion" class="mr4 mv3">Using WTF</button>
             </div>
         </div>
         <div class="fl w-100 f4 tl">    
@@ -74,8 +78,8 @@
     </section>
     <section class="cf w-100 pv2 flex flex-wrap">
         <h1>Output Texts</h1>
-        <div class="fl w-100 f4 tl">
-            <p class="lh-copy f4" id="output"></p>
+        <div id="output" class="w-100 fl cf flex">
+            <!-- Data from the script will populate here -->
         </div>
     </section>
     <script src="generator.js"></script>
