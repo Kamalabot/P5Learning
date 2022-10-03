@@ -1,186 +1,186 @@
 [
   {
-    "color": "dark-red,",
+    "color": "dark-red",
     "tag": "Tag",
     "description": "Description"
   },
   {
-    "color": "red,",
+    "color": "red",
     "tag": "CC",
     "description": "Coordinating conjunction"
   },
   {
-    "color": "light-red,",
+    "color": "light-red",
     "tag": "CD",
     "description": "Cardinal number"
   },
   {
-    "color": "orange,",
+    "color": "orange",
     "tag": "DT",
     "description": "Determiner"
   },
   {
-    "color": "gold,",
+    "color": "gold",
     "tag": "EX",
     "description": "Existential there"
   },
   {
-    "color": "yellow,",
+    "color": "yellow",
     "tag": "FW",
     "description": "Foreign word"
   },
   {
-    "color": "light-yellow,",
+    "color": "light-yellow",
     "tag": "IN",
     "description": "Preposition or subordinating conjunction"
   },
   {
-    "color": "purple,",
+    "color": "purple",
     "tag": "JJ",
     "description": "Adjective"
   },
   {
-    "color": "purple,",
+    "color": "purple",
     "tag": "JJR",
     "description": "Adjective"
   },
   {
-    "color": "purple,",
+    "color": "purple",
     "tag": "JJS",
     "description": "Adjective"
   },
   {
-    "color": "light-purple,",
+    "color": "light-purple",
     "tag": "LS",
     "description": "List item marker"
   },
   {
-    "color": "dark-pink,",
+    "color": "dark-pink",
     "tag": "MD",
     "description": "Modal"
   },
   {
-    "color": "hot-pink,",
+    "color": "hot-pink",
     "tag": "NN",
     "description": "Noun"
   },
   {
-    "color": "hot-pink,",
+    "color": "hot-pink",
     "tag": "NNS",
     "description": "Noun"
   },
   {
-    "color": "pink,",
+    "color": "pink",
     "tag": "NNP",
     "description": "Proper noun"
   },
   {
-    "color": "pink,",
+    "color": "pink",
     "tag": "NNPS",
     "description": "Proper noun"
   },
   {
-    "color": "light-pink,",
+    "color": "light-pink",
     "tag": "PDT",
     "description": "Predeterminer"
   },
   {
-    "color": "dark-green,",
+    "color": "dark-green",
     "tag": "POS",
     "description": "Possessive ending"
   },
   {
-    "color": "green,",
+    "color": "green",
     "tag": "PRP",
     "description": "Personal pronoun"
   },
   {
-    "color": "light-green,",
+    "color": "light-green",
     "tag": "PRP$",
     "description": "Possessive pronoun"
   },
   {
-    "color": "navy,",
+    "color": "navy",
     "tag": "RB",
     "description": "Adverb"
   },
   {
-    "color": "navy,",
+    "color": "navy",
     "tag": "RBR",
     "description": "Adverb"
   },
   {
-    "color": "navy,",
+    "color": "navy",
     "tag": "RBS",
     "description": "Adverb"
   },
   {
-    "color": "dark-blue,",
+    "color": "dark-blue",
     "tag": "RP",
     "description": "Particle"
   },
   {
-    "color": "blue,",
+    "color": "blue",
     "tag": "SYM",
     "description": "Symbol"
   },
   {
-    "color": "light-blue,",
+    "color": "light-blue",
     "tag": "TO",
     "description": "to"
   },
   {
-    "color": "lightest-blue,",
+    "color": "lightest-blue",
     "tag": "UH",
     "description": "Interjection"
   },
   {
-    "color": "washed-blue,",
+    "color": "washed-blue",
     "tag": "VB",
     "description": "Verb"
   },
   {
-    "color": "washed-blue,",
+    "color": "washed-blue",
     "tag": "VBD",
     "description": "Verb"
   },
   {
-    "color": "washed-blue,",
+    "color": "washed-blue",
     "tag": "VBG",
     "description": "Verb"
   },
   {
-    "color": "washed-blue,",
+    "color": "washed-blue",
     "tag": "VBN",
     "description": "Verb"
   },
   {
-    "color": "washed-blue,",
+    "color": "washed-blue",
     "tag": "VBP",
     "description": "Verb"
   },
   {
-    "color": "washed-blue,",
+    "color": "washed-blue",
     "tag": "VBZ",
     "description": "Verb"
   },
   {
-    "color": "washed-green,",
+    "color": "washed-green",
     "tag": "WDT",
     "description": "Wh-determiner"
   },
   {
-    "color": "washed-yellow,",
+    "color": "washed-yellow",
     "tag": "WP",
     "description": "Wh-pronoun"
   },
   {
-    "color": "washed-red,",
+    "color": "washed-red",
     "tag": "WP$",
     "description": "Possessive wh-pronoun"
   },
   {
-    "color": "dark-gray,",
+    "color": "dark-gray",
     "tag": "WRB",
     "description": "Wh-adverb"
   }

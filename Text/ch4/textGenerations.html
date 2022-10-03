@@ -46,6 +46,9 @@
                 type of Activities it allows one to perform is some time unique. I prefer to have the text that is analysed on the page so it will be 
                 easier to see the <strong>raw material</strong> on which the libraries are acting upon.
             </p>
+            <p class="lh-copy f4">The libraries have Objects with functions that perform like RegEx that is touched upon <a href="/Text/ch3/regExActions.html">here.</a>
+            If the Parts of speech needs to be tagged, simple regex is not going to make it. Need much more coding and learning about the language. These 
+        libraries abstract away the details to speed up analysis.</p>
             <h4>Select any libraries: </h4>
             <span>RiTA: </span><input type="checkbox" id="RiTa" name="RiTa" class="pa1 ml1">
             <span>Compromise: </span><input type="checkbox" id="Compromise" name="Compromise" class="pa1 ml1">
@@ -57,13 +60,13 @@
                 <button id="wcnt" class="mr4 mv3">Counting Words</button>
                 <button id="pos" class="mr4 mv3">Visual POS</button>
                 <button id="markov" class="mr4 mv3">Markovian Stories</button>
-                <button id="generate" class="mr4 mv3">Topic Generation</button>
+                <button id="generate" class="mr4 mv3">Concordance</button>
                 <button id="topic" class="mr4 mv3">Info Extraction</button>
                 <button id="emotion" class="mr4 mv3">Using WTF</button>
             </div>
         </div>
         <div class="fl w-100 f4 tl">    
-            <h3>Data Processed: Foundation & Earth Excerpt</h3>
+            <h3>Data Processed:</h3>
             <div id="textData">
                 <p class="lh-copy f4">Trevize looked up, as though to penetrate the thick layer of moonrock that separated him from the surface and from space; as though to force himself to see those far distant galaxies, moving slowly through unimaginable vistas of space.
                 </p>
@@ -78,7 +81,7 @@
     </section>
     <section class="cf w-100 pv2 flex flex-wrap">
         <h1>Output Texts</h1>
-        <div id="output" class="w-100 fl cf flex">
+        <div id="output" class="cf pa2">
             <!-- Data from the script will populate here -->
         </div>
     </section>

@@ -29,6 +29,16 @@ var generateB;
 var storyB;
 var emotionB;
 
+var pennColors;
+var deskTagMap;
+
+var markoFilo;
+
+function preload(){
+    pennColors = loadJSON("./pennTagColored.json")
+    markoFilo = loadStrings("./textFile2.txt")
+}
+
 
 function setup(){
     noCanvas()
@@ -66,6 +76,10 @@ function setup(){
     posB.mouseClicked(generatePos)
 
     dropper.drop(afterDrop)
+    
+    pennTagMap = new Map(Object.entries(pennColors).map(d =>[d[1].tag,d[1].color])) 
+    deskTagMap = new Map(Object.entries(pennColors).map(d =>[d[1].description,d[1].color]))
+    // print(pennTagMap)
 }
 
 
@@ -179,16 +193,193 @@ printList=function(doc){
   }
 
 function generatePos(){
-    //give preference to RiTa
-    print('recd Sig')
+    //getting data
+    if(select('#output').html()){
+        select('#output').html('')
+    }
+    let getData  = processHtml(textGiven.html())
+    //making Compromise Object
+    let nlpObject = nlp(getData)
+    // Showing the No of Sentences
+    // Placing the words and coloring POS tags
+    createElement('div')
+        .parent('output')
+        .class('w-60-ns fl')
+        .id('tagP')
+
+    createElement('h3')
+        .parent('tagP')
+        .html('POS Tagged')
+    
+    let tagObject = nlpObject.terms().json().map(d => [d.terms[0].text, d.terms[0].tags[0]])
+    
+    createP('').parent('tagP').id('posText')
+    for(let w of tagObject){
+        // print(w[1])
+        createElement('span')
+            .parent('posText')
+            .class(`f5 tc bg-${deskTagMap.get(w[1])}`)
+            .html(`${w[0]}`)
+        createElement('span')
+            .parent('posText')
+            .html('&emsp;')
+    }   
+
+    //bringing the tag Legends
+    createElement('div')
+        .parent('output')
+        .class('w-40-ns fl')
+        .id('tagL')
+
+    createElement('h4')
+        .parent('tagL')
+        .html('Legend of Penn')
+    //learnt how to give space in html
+    for (let penn of Object.entries(pennColors)){
+        // createElement('span')
+        //     .parent('tagL')
+        //     .class(`f5 tc`)
+        //     .html(`${penn[1].tag}:&emsp;`)
+        
+        createElement('span')
+            .parent('tagL')
+            .class(`f5 tc bg-${penn[1].color}`)
+            .html(`${penn[1].description} &emsp;`)
+
+        createElement('span')
+            .parent('tagL')
+            .html('&emsp;')
+    }
+    return nlpObject
+
 }
 
 function generateMarkov(){
-    console.log('got Sig')
+    //getting data
+    if(select('#output').html()){
+        select('#output').html('')
+    }
+    let getData  = processHtml(textGiven.html())
+    //making Compromise Object
+    let markov = RiTa.markov(4);
+
+    // load text into the model
+    markov.addText(getData);
+    markov.addText(markoFilo.join('\n'));
+    
+    var lines = markov.generate(10)
+    
+    // print(lines)
+
+    createElement('div')
+        .parent('output')
+        .class('w-50-ns fl')
+        .id('story')
+
+    createElement('h3')
+        .parent('story')
+        .html('Generated Story')
+    createP('')
+        .parent('story')
+        .id('anch')
+        .class('lh-copy f4')
+
+    for(let lin of lines){
+    createElement('span')
+        .parent('anch')
+        .html(`${lin} `)
+    }
+///////////////////////
+    createElement('div')
+        .parent('output')
+        .class('w-50-ns fl')
+        .id('grama')
+
+    createElement('h3')
+        .parent('grama')
+        .html('Which Grammar Used?')
+    let sentStart = markov.sentenceStarts
+    let sentEnd = markov.sentenceEnds
+    createP("RiTa uses Markov Chains to generate Context free-grammar using the text under the Data Processed section, and another text file")
+        .parent('grama')
+        .class('lh-copy f4')
+
+    createElement('h3')
+        .parent('grama')
+        .html('Sentence Starts in that Grammar are')
+    
+    createP('')
+        .parent('grama')
+        .id('hanc')
+        .class('lh-copy f4')
+    for(let lin of sentStart){
+        createElement('span')
+            .parent('hanc')
+            .class('lh-copy f4')
+            .html(`${lin} `)
+        }
+    
+    createElement('h3')
+        .parent('grama')
+        .html('Sentence Starts in that Grammar are')
+    
+    createP('')
+        .parent('grama')
+        .id('hand')
+        .class('lh-copy f4')
+    
+    for(let lin of sentEnd){
+        createElement('span')
+            .parent('hand')
+            .class('lh-copy f4')
+            .html(`${lin} `)
+        }
+    
+    createElement('h3')
+        .parent('grama')
+        .html('That is All folks.')
+
+    return markov
 }
 
 function generateMiscel(){
-    console.log('got Sig')
+    //getting data
+    if(select('#output').html()){
+        select('#output').html('')
+    }
+    let getData  = processHtml(textGiven.html())
+    //making Compromise Object
+
+    let conCord = Object.entries(RiTa.concordance(getData + markoFilo)).sort((a,b)=>(b[1] - a[1]))
+
+    createElement('div')
+        .parent('output')
+        .class('w-50-ns fl')
+        .id('concord')
+
+    createElement('h3')
+        .parent('concord')
+        .html('Can you guess what the Story is About?')
+    
+    createElement('p')
+        .parent('concord')
+        .html('The words and their usage frequency is listed below')
+
+    createP('')
+        .parent('concord')
+        .id('anch')
+        .class('lh-copy f4')
+
+    for(let lin of conCord.slice(0,20)){
+        createElement('span')
+            .parent('anch')
+            .class('lh-copy f4')
+            .html(`${lin[0]}: &nbsp;${lin[1]} &emsp;`)
+        }
+    createElement('h4')
+        .parent('concord')
+        .html('Try importing your files and check')
+    return conCord
 }
 
 function generateStory(){
@@ -201,13 +392,16 @@ function generateEmotion(){
 
 function generateWordC(){
     //getting data
+    if(select('#output').html()){
+        select('#output').html('')
+    }
     let getData  = processHtml(textGiven.html())
     //making Compromise Object
     let nlpObject = nlp(getData)
     // Showing the No of Sentences
     createElement('div')
         .parent('output')
-        .class('w-25 f4')
+        .class('w-25-ns fl') //flow left is applied every div
         .id('sentence')
 
     createElement('h3')
@@ -216,12 +410,12 @@ function generateWordC(){
     
     createP(nlpObject.length)
         .parent('sentence')
-        .class('f1 tc')
+        .class('tc')
 
     // Showing the No of Words
     createElement('div')
         .parent('output')
-        .class('w-25 f4')
+        .class('w-25-ns fl') //ns is not-small, very important
         .id('wordC')
 
     createElement('h3')
@@ -230,11 +424,11 @@ function generateWordC(){
     
     createP(nlpObject.wordCount())
         .parent('wordC')
-        .class('f1 tc')
+        .class('tc')
     // Showing the first sentences and its tags
     createElement('div')
         .parent('output')
-        .class('w-50 f4')
+        .class('w-50-ns fl')
         .id('sentF')
 
     createElement('h3')
@@ -244,23 +438,4 @@ function generateWordC(){
     createP(nlpObject.sentences().eq(0).text())
         .parent('sentF')
         .class('f5 tc')
-
-    // coloring POS tags
-    createElement('div')
-        .parent('output')
-        .class('w-50 f4')
-        .id('tagP')
-
-    createElement('h3')
-        .parent('tagP')
-        .html('POS Tagged')
-    let tagObject = myObj.json()[0].terms.map(t=>[t.text, t.penn])
-    let tagSet = new Set(myObj.json()[0].terms.map(t=> t.penn))
-    let pennUrl = 'https://www.ling.upenn.edu/courses/Fall_2003/ling001/penn_treebank_pos.html'
-    
-    createP(nlpObject.sentences().eq(0).text())
-        .parent('tagP')
-        .class('f5 tc')
-
-    return nlpObject
 }
