@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Training Models</title>
+    <link rel="stylesheet" href="../../libraries/tachyons/tachyons.min.css">
+    <script src="../../libraries/ml5.js"></script>
+    <script src="../../libraries/p5.js"></script>
+</head>
+
+<body class="Roboto pa1 bg-near-white">
+    <a href="../mlIndex.html" class="f4 no-underline blue bg-animate hover-bg-green hover-white inline-flex items-center pa3 ba border-box mr4">
+        <span class="pl1">ML Home</span>
+      </a>
+    <a href="../../index.html" class="f4 no-underline black bg-animate hover-bg-orange hover-white inline-flex items-right pa3 ba border-box mr4">
+      <span class="pr1">Home</span>
+    </a>
+    <section class="cf w-100 pv2 flex flex-wrap">
+        <div class="fl w-100 f4 tl">
+            <h1>Can you draw with your webcam?</h1>
+            <p class="f4 lh-copy">
+                Posibilities have opened up for the devices to have context aware capabilities. The microphone, camera and other sensors that are built into the device can send the information which can be used for 
+                generating new outputs on the page, speaker and other connected devices. What this means to the user, programmer and finally the <strong>human kind?</strong> (why so Serious???)
+            </p>
+            <p class="f4 lh-copy">
+                Everyone has a finger or ten, so I decide to train the mobilenet model to recognize the finger. What it does after recognizing is the fun part... Stay tuned.
+            </p>
+            <p class="f4 lh-copy bg-red white w-50" id="resOut"></p>
+            <div class="cf flex">
+                <p id="slideX" class="pa2 tc"></p>
+                <p id="slideY" class="pa2 tc"></p>
+            </div>
+            <div class="cf flex">
+                <p id="train" class="pa2 tc"></p>
+                <p id="add" class="pa2 tc"></p>
+                <p id="save" class="pa2 tc"></p>
+            </div>
+        </div>
+    </section>
+    <script src="main.js"></script>
+</body>
+</html>
