@@ -7,8 +7,10 @@ var camdeo;
 
 var slideY;
 var slideX;
+
 var trainB;
 var saveB;
+var loadB;
 
 var addPic;
 var value;
@@ -39,16 +41,17 @@ function whileTrainin(loss){
 }
 
 function draw(){ //draw function imposes video on the canvas
+    background(255)
     fill(255,0,255)
-    rect(25,value,25,25)
-    image(camdeo,0,0,width,height)
+    rect(450,value,25,25)
+    //image(camdeo,0,0,400,400)
  }
 
 function getResults(error, result){
     if (error){
         print(error)
     } else {
-        value = result
+        value = result.value
         print(value)
         predictor.predict(getResults)
     }
@@ -56,14 +59,16 @@ function getResults(error, result){
 }
 
 function setup(){
-    var canv = createCanvas(640,480)
+    var canv = createCanvas(500,500)
     canv.parent('resOut')
     camdeo = createCapture(VIDEO)
     camdeo.hide()
+   
     
     mobilenet = ml5.featureExtractor('MobileNet',modelReady) 
     
     predictor = mobilenet.regression(camdeo, camdeoReady)
+    
     loadRes= select("#resOut")
 
     slideX = createSlider(0,30,1,0.5).size(300,30).parent('slideX')
@@ -73,6 +78,7 @@ function setup(){
     addPic = createButton('addPic').size(100,50).parent('add')
     saveB = createButton('saveModel').size(100,50).parent('save')
     
+    loadB = createButton('load Model').size(100,50).parent('load')
 
     saveB.mouseClicked(()=>{
         predictor.save();
